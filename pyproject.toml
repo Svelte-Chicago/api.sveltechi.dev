@@ -1,0 +1,19 @@
+[project]
+name = "api.sveltechi.dev"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Stephen Sadowski", email = "stephen.sadowski@sjsadowski.com"},
+]
+dependencies = [
+    "sanic[ext]>=22.3.1",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm]
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
