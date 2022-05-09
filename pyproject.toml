@@ -1,15 +1,17 @@
 [project]
-name = "api.sveltechi.dev"
-version = "0.1.0"
+name = ""
+version = ""
 description = ""
 authors = [
     {name = "Stephen Sadowski", email = "stephen.sadowski@sjsadowski.com"},
 ]
 dependencies = [
     "sanic[ext]>=22.3.1",
+    "python-dotenv>=0.20.0",
+    "firebase-admin>=5.2.0",
+    "google-cloud-firestore>=2.4.0",
 ]
-requires-python = ">=3.10"
-readme = "README.md"
+requires-python = ">=3.9"
 license = {text = "MIT"}
 
 [tool.pdm]
