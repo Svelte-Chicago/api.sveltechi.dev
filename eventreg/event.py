@@ -1,26 +1,36 @@
 import uuid
+import json
+import os
 
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-class events:
 
-    eventlist: list = []
+class EventLoadError(Exception):
+    pass
 
-    def __init__(self):
+class event:
+
+    _credentials: dict = {}
+    _data: dict = {}
+
+    def __init__(self, event_id: str):
+        try:
+            self._credentials= json.loads(os.getenv("GOOGLE_AUTH"))
+        except json.decoder.JSONDecodeError as jde:
+            pass
+
+    def details(self) -> dict:
         pass
 
-    def fetchall(self):
+    def register(self, registration: dict) -> bool:
         pass
 
-    def register(self, email: str, plus: int = 0) -> bool:
+    def confirm(self, event_id: str, email: str, confirmation: str) -> bool:
         pass
 
-    def confirm(self, email: str, confirmation: str) -> bool:
+    def update(self, event_id: str, email: str, confirmation: str, plus: int = 0) -> bool:
         pass
 
-    def update(self, email: str, confirmation: str, plus: int = 0) -> bool:
-        pass
-
-    def deregister(self, email: str, confirmation: str) -> bool:
+    def deregister(self, event_id: str, email: str, confirmation: str) -> bool:
         pass
