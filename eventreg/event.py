@@ -1,12 +1,14 @@
 import uuid
 import json
 import os
-
-import firebase_admin
-from firebase_admin import credentials, firestore
-
+from dataclasses import dataclass
 
 class EventLoadError(Exception):
+    pass
+
+
+@dataclass
+class events:
     pass
 
 class event:
@@ -16,7 +18,7 @@ class event:
 
     def __init__(self, event_id: str):
         try:
-            self._credentials= json.loads(os.getenv("GOOGLE_AUTH"))
+            pass
         except json.decoder.JSONDecodeError as jde:
             pass
 
