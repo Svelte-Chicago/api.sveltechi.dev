@@ -13,7 +13,6 @@ class events:
 
 class event:
 
-    _credentials: dict = {}
     _data: dict = {}
 
     def __init__(self, event_id: str):
